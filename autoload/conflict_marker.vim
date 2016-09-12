@@ -93,7 +93,7 @@ function! s:jump_to_hunk_if_valid(original_pos, hunk)
         call cursor(a:hunk[0][0], a:hunk[0][1])
         return 1
     else
-        echohl ErrorMsg | echo 'conflict not found' | echohl None
+        echoerr 'conflict not found'
         call setpos('.', a:original_pos)
         return 0
     endif
